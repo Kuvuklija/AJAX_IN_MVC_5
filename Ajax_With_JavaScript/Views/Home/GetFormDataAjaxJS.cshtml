@@ -1,0 +1,44 @@
+﻿@model Ajax_With_JavaScript.Models.Accept
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JavaScript and jQuery</title>
+    <link rel="stylesheet" href="~/Scripts/c08.css" />
+</head>
+<body>
+    <header>
+        <h1>BRAIN ATTACK</h1>
+    </header>
+    <section>
+        <div class="half">
+            <img src="~/img/register-circuitboard.jpg" alt="printed board" />
+        </div>
+        <div class="half">
+            @using (Html.BeginForm("GetFormDataAjaxJS", "Home", FormMethod.Post, new { id = "register" })){
+
+                @Html.ValidationSummary()
+
+                <h2>Registration</h2>
+                <p><label for="name">Login:</label></p>
+                @Html.EditorFor(x => x.Login)
+                <p><label for="pwd">Password:</label></p>
+                @Html.Password("Password")
+                <p><label for="email">E-mail:</label></p>
+                @Html.EditorFor(x => x.Email)
+                <div>
+                    <input type="submit" value="Join" />
+                </div>
+            }
+        </div>
+    </section>
+    <script src="~/Scripts/jquery-1.11.0.min.js"></script>
+    <script src="~/Scripts/jq-post.js"></script>
+</body>
+</html>
