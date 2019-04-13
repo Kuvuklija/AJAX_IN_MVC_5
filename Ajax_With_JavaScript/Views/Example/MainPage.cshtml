@@ -1,0 +1,31 @@
+﻿@model int
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="windows-1251">
+  <title>JavaScript и jQuery - Глава 8</title>
+    <link rel="stylesheet" href="~/Scripts/c08.css" />
+  </head>
+  <body>
+
+    <header>
+      <h1>МОЗГОВОЙ ШТУРМ</h1>
+      <nav>
+        @Html.ActionLink("MAIN","Load1","Example", new { load = 1 },new {@class="main"})
+        @Html.ActionLink("EVENTS","Load2","Example", new { load = 2}, new { @class= "events" })
+        @Html.ActionLink("TOYS","Load3","Example", new { load=3}, new { @class="toys"})
+        @Html.ActionLink("PLAN","Load4","Example", new { load=4}, new { @class="plan"})
+        <!--<a href="Load4" class="current">ПЛАН</a>-->
+      </nav>
+    </header>
+
+    <section id="content">
+       @Html.Partial("Load"+Model)
+    </section>
+
+    <script src="~/Scripts/jquery-1.11.0.js"></script>
+    <script src="~/Scripts/example.js"></script>
+
+  </body>
+</html>

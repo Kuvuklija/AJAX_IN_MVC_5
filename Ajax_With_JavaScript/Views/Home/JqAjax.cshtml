@@ -1,0 +1,36 @@
+﻿@model int?
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>JavaScript и jQuery - Глава 8</title>
+    <link rel="stylesheet" href="~/Scripts/c08.css" />
+  </head>
+<body>
+    <header>
+        <h1>МОЗГОВОЙ ШТУРМ</h1>
+        <nav>
+            <a href="JqAjax1" class="current">ГЛАВНАЯ</a>
+            <a href="JqAjax2">СОБЫТИЯ</a>
+            <a href="JqAjax3">ИГРУШКИ</a>
+        </nav>
+    </header>
+    
+    <section id="content">
+        @switch ((int)Model)
+            {
+                case 1: @Html.Partial("JqAjax1");
+                    break;
+                case 2: @Html.Partial("JqAjax2");
+                    break;
+                case 3: @Html.Partial("JqAjax3");
+                    break;
+            }
+    </section>
+
+    <script src="~/Scripts/jquery-1.11.0.js"></script>
+    <script src="~/Scripts/jq-ajax.js"></script>
+
+</body>
+</html>

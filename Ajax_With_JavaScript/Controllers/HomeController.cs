@@ -46,5 +46,31 @@ namespace Ajax_With_JavaScript.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
             //return Json(null, JsonRequestBehavior.AllowGet); //fail
         }
+
+        //$.ajax thin managing by requests
+        public ActionResult JqAjax(int numberPartialView=1) {
+            return View(numberPartialView);
+        }
+
+        public object JqAjax1() {
+            if (Request.Headers["X-Requested-With"] == null) {
+                return RedirectToAction("JqAjax", new { numberPartialView=1});
+            }
+            return PartialView("JqAjax1");
+        }
+
+        public object JqAjax2() {
+            if (Request.Headers["X-Requested-With"] == null){
+                return RedirectToAction("JqAjax", new { numberPartialView = 2 });
+            }
+            return PartialView("JqAjax2");
+        }
+
+        public object JqAjax3() {
+            if (Request.Headers["X-Requested-With"] == null) {
+                return RedirectToAction("JqAjax", new { numberPartialView = 3 });
+            }
+            return PartialView("JqAjax3");
+        }
     }
 }
