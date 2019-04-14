@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Content\example.json" />
+    <Content Include="Content\ArrangementList.json" />
     <None Include="Scripts\jquery-1.11.0.intellisense.js" />
     <Content Include="img\cn.png" />
     <Content Include="img\home1.jpg" />
@@ -140,6 +141,7 @@
     <Content Include="Views\Example\Load1.cshtml" />
     <Content Include="Views\Example\Load2.cshtml" />
     <Content Include="Views\Example\Load3.cshtml" />
+    <Content Include="Views\Example\Description.cshtml" />
     <None Include="Views\Home\GetJSON.cshtml" />
     <Content Include="Scripts\js-getJSON.js" />
     <None Include="Views\Example\MainPage.cshtml" />
@@ -177,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ExampleJson\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

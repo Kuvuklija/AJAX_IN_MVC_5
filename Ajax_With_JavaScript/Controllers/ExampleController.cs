@@ -60,8 +60,12 @@ namespace Ajax_With_JavaScript.Controllers{
         }
 
         public JsonResult EventList() {
-            var json = System.IO.File.ReadAllText(Server.MapPath("~/Content/example.json"));
+            var json = System.IO.File.ReadAllText(Server.MapPath("~/Content/ArrangementList.json"), System.Text.Encoding.Default); //see about encoding
             return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
+        public PartialViewResult Description() {
+            return PartialView();
         }
     }
 }

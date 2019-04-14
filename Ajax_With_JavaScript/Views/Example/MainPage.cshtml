@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="windows-1251">
+  <meta charset="utf-8">
   <title>JavaScript и jQuery - Глава 8</title>
     <link rel="stylesheet" href="~/Scripts/c08.css" />
   </head>
@@ -12,16 +12,18 @@
     <header>
       <h1>МОЗГОВОЙ ШТУРМ</h1>
       <nav>
-        @Html.ActionLink("MAIN","Load1","Example", new { load = 1 },new {@class="main"})
-        @Html.ActionLink("EVENTS","Load2","Example", new { load = 2}, new { @class= "events" })
-        @Html.ActionLink("TOYS","Load3","Example", new { load=3}, new { @class="toys"})
-        @Html.ActionLink("PLAN","Load4","Example", new { load=4}, new { @class="plan"})
+        @Html.ActionLink("MAIN","Load1","Example", new { load = 1 },new {@class= "Load1", num=1 })
+        @Html.ActionLink("EVENTS","Load2","Example", new { load = 2}, new { @class= "Load2", num=2 })
+        @Html.ActionLink("TOYS","Load3","Example", new { load=3}, new { @class= "Load3", num=3 })
+        @Html.ActionLink("PLAN","Load4","Example", new { load=4}, new { @class= "Load4", num=4 })
         <!--<a href="Load4" class="current">ПЛАН</a>-->
       </nav>
     </header>
 
     <section id="content">
-       @Html.Partial("Load"+Model)
+        <div id="container">
+            @Html.Partial("Load" + Model)
+        </div>
     </section>
 
     <script src="~/Scripts/jquery-1.11.0.js"></script>

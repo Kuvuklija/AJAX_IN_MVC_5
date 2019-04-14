@@ -35,7 +35,17 @@ namespace Ajax_With_JavaScript.UnitTests
 
         [TestMethod]
         public void Can_Partial_View_With_Ajax() {
+            //arrange
+            ExampleController target = new ExampleController();
+            target.term = true;
+            int load = 2;
 
+            //action
+            PartialViewResult result = (PartialViewResult)target.Load2(load);
+
+            //assert
+            Assert.AreEqual(result.ViewData.Model, null);
+            Assert.AreEqual(result.ViewName, "");
         }
     }
 }
